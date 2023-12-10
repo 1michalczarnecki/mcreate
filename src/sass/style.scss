@@ -1,0 +1,626 @@
+@use 'colors' as *;
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 10px;
+	scroll-behavior: smooth;
+	// scroll-padding-top: 64px;
+}
+
+html,
+body {
+	height: 100%;
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+}
+
+a {
+	text-decoration: none;
+	color: $text-color;
+	transition: color 0.3s;
+}
+
+img {
+	height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+	font-family: inherit;
+}
+
+button {
+	border: none;
+	cursor: pointer;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.section-title {
+	text-align: center;
+	font-size: 1.8rem;
+	color: $text-color;
+}
+
+.underline {
+	margin: 0 auto;
+	width: 4em;
+	height: 0.2em;
+	background-color: $decoration-text-color;
+}
+
+.shadow-bg{
+	background-color: $menu-background;
+}
+
+.nav {
+	&__desktop {
+		display: none;
+	}
+
+	&__mobile {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		background-color: $menu-background;
+	}
+
+	&__items {
+		display: flex;
+		justify-content: space-evenly;
+
+		a {
+			padding: 1em 0;
+			font-size: 1rem;
+			color: $text-color;
+			transition: color 0.3s;
+		}
+
+		a:hover {
+			color: $decoration-text-color;
+		}
+	}
+
+	&__link {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.fa-solid {
+			margin-bottom: 0.5em;
+		}
+	}
+}
+
+.header {
+	background-color: $header-bg-color;
+	.wrapper {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(5, 1fr);
+		height: 100vh;
+
+		.nav__desktop {
+			display: none;
+		}
+	}
+
+	&__offer {
+		display: none;
+	}
+
+	&__logo {
+		display: grid;
+		grid-row: 1/2;
+
+		&-container {
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			transform: rotate(0deg);
+			transition: transform 0.3s;
+		}
+
+		&-container:hover {
+			transform: rotate(-2deg);
+		}
+
+		&-box {
+			flex-direction: column;
+			width: 70vw;
+			padding: 2em 1em;
+			background-color: $white-color;
+			border-right: 2px solid $text-color;
+			border-left: 2px solid $text-color;
+			border-bottom: 2px solid $text-color;
+			box-shadow: 6px 6px 0px $text-color;
+			text-align: center;
+			.company-name {
+				color: $text-color;
+				font-size: 1.5rem;
+				font-weight: bold;
+			}
+		}
+	}
+
+	&__icon {
+		display: grid;
+		grid-row: 2/3;
+		.fa-code {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 6rem;
+			color: $white-color;
+			animation: logoanimation 0.8s steps(2) infinite;
+		}
+	}
+	&__title {
+		grid-row: 3/5;
+		padding: 0 2em;
+		color: $text-color;
+
+		.company-text {
+			font-size: 2.5rem;
+			text-align: left;
+			text-transform: uppercase;
+			font-family: 'rubik bubbles';
+			color: $text-color;
+			z-index: 10;
+
+			.red-text {
+				background-color: $decoration-text-color;
+				color: $white-color;
+			}
+		}
+
+		.company-text-p {
+			padding: 1em;
+			font-size: 1.7rem;
+			background-color: $white-color;
+			transform: rotate(-2deg) translateX(0rem);
+			z-index: 10;
+		}
+	}
+}
+
+//aboutme
+.aboutme {
+	background-color: $white-color;
+	padding: 4em 2em;
+
+	&__boxes {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(4, 1fr);
+		margin: 2em;
+	}
+
+	&__box {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		flex-direction: column;
+		padding: 2em 0;
+		margin: 1em;
+		color: $text-color;
+
+		border-radius: 0.3em;
+		transition: color 0.3s, background-color 0.3s, border 0.3s;
+
+		&-icon {
+			font-size: 1.6rem;
+			margin-bottom: 0.5em;
+		}
+
+		&-title {
+			font-weight: bold;
+			font-size: 1.2rem;
+			margin-bottom: 0.5em;
+		}
+
+		&-text {
+			font-size: 1.2rem;
+		}
+	}
+
+	&__box:hover {
+		color: $decoration-text-color;
+	}
+}
+
+//contact
+.contact {
+	background-color: $menu-background;
+	padding: 4em 2em;
+
+	&-icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 2em 0;
+
+		.fa-mailchimp {
+			font-size: 4rem;
+		}
+	}
+
+	&__date {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		flex-direction: column;
+
+		&-text {
+			margin: 1em 0;
+		}
+
+		&-number {
+			margin-bottom: 1em;
+		}
+
+		&-facebook {
+			margin-bottom: 1em;
+		}
+
+		a:hover {
+			color: $decoration-text-color;
+		}
+	}
+}
+
+.footer {
+	padding: 0 0 8em;
+	background-color: $menu-background;
+	font-size: 0.8rem;
+	text-align: center;
+}
+
+//animation
+@keyframes logoanimation {
+	100% {
+		transform: rotate(-8deg);
+	}
+}
+
+//media
+@media (min-width: 578px) {
+	.header {
+		.wrapper {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+		}
+
+		&__offer {
+			display: grid;
+			grid-column: 2/3;
+			grid-row: 1/2;
+			&-box {
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+				margin-top: 2em;
+				color: $text-color;
+			}
+		}
+		.offer-btn {
+			color: $text-color;
+			background-color: $white-color;
+			border: 3px solid $text-color;
+			box-shadow: 4px 4px 0px $text-color;
+			padding: 0.5em 2em;
+			transition: box-shadow 0.3s;
+		}
+
+		.offer-btn:hover {
+			box-shadow: 0px 0px 4px $text-color;
+		}
+
+		&__logo {
+			display: grid;
+			grid-row: 1/2;
+			grid-column: 1/2;
+
+			&-box {
+				width: 25vw;
+			}
+		}
+
+		&__icon {
+			display: grid;
+			grid-row: 2/3;
+			grid-column: 1/2;
+			justify-content: center;
+			align-items: center;
+			.fa-code {
+				font-size: 12rem;
+			}
+		}
+		&__title {
+			display: grid;
+			grid-row: 2/3;
+			grid-column: 2/3;
+
+			.company-text {
+				font-size: 2.5rem;
+			}
+
+			.company-text-p {
+				font-size: 1.7rem;
+			}
+		}
+	}
+
+	.aboutme {
+		&__box {
+			align-items: center;
+			justify-content: center;
+
+			&-icon {
+				font-size: 1.8rem;
+			}
+
+			&-title {
+				font-size: 1.4rem;
+			}
+
+			&-text {
+				font-size: 1.4rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 786px) {
+	.header {
+		&__logo {
+			&-box {
+				width: 20vw;
+			}
+		}
+
+		&__icon {
+			.fa-code {
+				font-size: 14rem;
+			}
+		}
+		&__title {
+			.company-text {
+				font-size: 3rem;
+			}
+
+			.company-text-p {
+				padding: 1em;
+			}
+		}
+	}
+
+	.aboutme {
+		padding: 4rem;
+	}
+
+	.contact {
+		.wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		&-icon {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 4em;
+
+			.fa-mailchimp {
+				font-size: 18rem;
+			}
+		}
+
+		&__date {
+			margin-top: 4em;
+			font-size: 1.1rem;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.nav {
+		&__mobile {
+			display: none;
+		}
+
+		&__desktop {
+			position: fixed;
+			display: flex;
+			justify-content: space-evenly;
+			width: 100%;
+			// background-color: $menu-background;
+			z-index: 100;
+
+			&-items {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				.hover::after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					height: 3px;
+					width: 100%;
+					background-color: $decoration-text-color;
+					transform: scaleX(0);
+					transform-origin: left;
+					transition: transform 0.8s;
+				}
+
+				.hover:hover::after {
+					transform: scaleX(1);
+					transform-origin: right;
+				}
+			}
+
+			&-item {
+				position: relative;
+				padding: 0.5em 2em;
+				font-weight: bold;
+				font-size: 1.2rem;
+				color: $text-color;
+			}
+		}
+
+		&__logo {
+			&-container {
+				transform: rotate(0deg);
+				transition: transform 0.3s;
+			}
+
+			&-container:hover {
+				transform: rotate(-2deg);
+			}
+
+			&-box {
+				flex-direction: column;
+				padding: 1em 2em;
+				background-color: $white-color;
+				border-right: 2px solid $text-color;
+				border-left: 2px solid $text-color;
+				border-bottom: 2px solid $text-color;
+				box-shadow: 6px 6px 0px $text-color;
+				text-align: center;
+				.company-name {
+					color: $text-color;
+					font-size: 1.8rem;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	.header {
+		&__offer {
+			display: none;
+		}
+		.wrapper {
+			.nav__desktop {
+				display: grid;
+				grid-row: 1/2;
+				grid-column: 2/3;
+				&-items {
+					display: flex;
+					justify-content: center;
+					align-items: flex-start;
+				}
+				&-item {
+					padding: 1em;
+					font-size: 1.5rem;
+					color: $text-color;
+					font-weight: bold;
+					text-align: center;
+				}
+			}
+		}
+
+		&__logo {
+			display: none;
+		}
+
+		&__title {
+			.company-text {
+				font-size: 4rem;
+			}
+
+			.company-text-p {
+				font-size: 2.5rem;
+			}
+		}
+
+		&__icon {
+			.fa-code {
+				font-size: 18rem;
+			}
+		}
+	}
+
+	.aboutme {
+		padding: 6rem;
+
+		&__boxes {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+		}
+
+		&__box {
+			text-align: center;
+		}
+
+		&__box:nth-child(1) {
+			grid-column: 1 / 2;
+			grid-row: 1 / 2;
+		}
+
+		&__box:nth-child(2) {
+			grid-column: 2 / 3;
+			grid-row: 1 / 2;
+		}
+
+		&__box:nth-child(3) {
+			grid-column: 1 / 2;
+			grid-row: 2/ 3;
+		}
+
+		&__box:nth-child(4) {
+			grid-column: 2 / 3;
+			grid-row: 2 / 3;
+		}
+	}
+
+	.contact {
+		.wrapper {
+			display: flex;
+			justify-content: space-evenly;
+		}
+		&-icon {
+			.fa-mailchimp {
+				font-size: 20rem;
+			}
+		}
+
+		&__date {
+			font-size: 1.2rem;
+		}
+	}
+
+	.footer {
+		padding: 2em;
+		background-color: $menu-background;
+		font-size: 1rem;
+		text-align: center;
+	}
+}
+
+@media (min-width: 1200px) {
+	.nav__desktop-item {
+		font-size: 1.4rem;
+	}
+}
