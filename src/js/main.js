@@ -1,6 +1,49 @@
 const textElements = document.querySelectorAll('.company-name')
 const footerYear = document.querySelector('.footer-year')
 const navDesktop = document.querySelector('.nav__desktop')
+const arrowLeft = document.querySelector('.portfolio__arrow-left')
+const arrowRight = document.querySelector('.portfolio__arrow-right')
+
+let activeSlideNumber = 1
+
+const hideActiveSlide = () => {
+    const activeElement = document.querySelector('.active')
+    activeElement.classList.remove('active')
+}
+
+const showSlide = (slideNumber) => {
+    hideActiveSlide()
+    document.querySelector('#slide'+slideNumber).classList.add('active')
+}
+
+const showNextSlide = () => {
+    if(activeSlideNumber === 3){
+        activeSlideNumber = 1
+    }else{
+        activeSlideNumber = activeSlideNumber + 1;
+    }
+    showSlide(activeSlideNumber)
+}
+
+const showNPreviousSlide = () => {
+    if(activeSlideNumber === 1){
+        activeSlideNumber = 3
+    }else{
+        activeSlideNumber = activeSlideNumber - 1;
+    }
+    showSlide(activeSlideNumber)
+}
+
+for (let i = 1; i <= 3; i++){
+    let showSlideI = () => {
+        activeSlideNumber = i
+        showSlide(i)
+    }
+    
+}
+
+
+
 
 //animationText
 textElements.forEach(textElement => {
@@ -38,5 +81,9 @@ const currentYear = () =>{
     footerYear.innerText = year
 }
 
+
+
 currentYear()
 window.addEventListener('scroll', addShadowBg)
+arrowRight.addEventListener('click', showNextSlide)
+arrowLeft.addEventListener('click', showNPreviousSlide)

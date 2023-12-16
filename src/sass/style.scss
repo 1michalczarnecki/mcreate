@@ -66,7 +66,7 @@ textarea {
 	background-color: $decoration-text-color;
 }
 
-.shadow-bg{
+.shadow-bg {
 	background-color: $menu-background;
 }
 
@@ -80,6 +80,7 @@ textarea {
 		bottom: 0;
 		width: 100%;
 		background-color: $menu-background;
+		z-index: 1000;
 	}
 
 	&__items {
@@ -112,11 +113,12 @@ textarea {
 
 .header {
 	background-color: $header-bg-color;
+
 	.wrapper {
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(5, 1fr);
-		height: 100vh;
+		// height: 100vh;
 
 		.nav__desktop {
 			display: none;
@@ -287,6 +289,56 @@ textarea {
 	}
 }
 
+//portfolio
+.portfolio {
+	background-color: $white-color;
+	padding: 4em 2em;
+
+	&__boxes-desktop {
+		display: none;
+	}
+
+	&__arrow{
+		&-left,&-right{
+			display: none;
+		}
+	}
+
+	.wrapper {
+		margin-top: 2em;
+	}
+
+	&-title {
+		margin-bottom: 1em;
+	}
+
+	&__boxes-mobile {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		margin-bottom: 2em;
+	}
+
+	&__box {
+		margin-top: 1em;
+		width: 100%;
+		background-color: $text-color;
+
+		&-project {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.mobile-photo {
+				margin: 2em 0;
+				width: auto;
+				max-height: 20rem;
+			}
+		}
+	}
+}
+
 .footer {
 	padding: 0 0 8em;
 	background-color: $menu-background;
@@ -308,6 +360,7 @@ textarea {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: repeat(3, 1fr);
+			height: 100vh;
 		}
 
 		&__offer {
@@ -386,6 +439,59 @@ textarea {
 			&-text {
 				font-size: 1.4rem;
 			}
+		}
+	}
+
+	.portfolio {
+		&-title {
+			text-align: center;
+			font-size: 1.4rem;
+		}
+		&__text {
+			text-align: center;
+			font-size: 1.4rem;
+		}
+
+		&__boxes-mobile {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: row;
+			position: relative;
+			margin-bottom: 2em;
+		}
+
+		&__arrow-right,
+		&__arrow-left {
+			display: flex;
+			position: absolute;
+			top: 50%;
+			right: 5%;
+			transform: translateY(-50%);
+
+			font-size: 2rem;
+			color: $white-color;
+			cursor: pointer;
+
+			z-index: 100;
+		}
+
+		&__arrow-left {
+			left: 5%;
+		}
+
+		.slide {
+			display: none;
+			width: 100%;
+			height: auto; 
+		}
+
+		
+
+		.slide.active {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 	}
 }
@@ -521,10 +627,12 @@ textarea {
 			display: none;
 		}
 		.wrapper {
+			height: 100vh;
 			.nav__desktop {
 				display: grid;
 				grid-row: 1/2;
 				grid-column: 2/3;
+
 				&-items {
 					display: flex;
 					justify-content: center;
@@ -609,6 +717,111 @@ textarea {
 		&__date {
 			font-size: 1.2rem;
 		}
+	}
+
+	.portfolio {
+		&__boxes-mobile {
+			display: none;
+		}
+
+		&__boxes-desktop {
+			display: flex;
+		}
+
+		&__slider {
+			margin-top: 2em;
+			padding: 2rem;
+			width: 100%;
+			height: auto;
+			background-color: $text-color;
+		}
+
+		&__container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 600px;
+			overflow: hidden;
+		}
+
+		&__slides-box {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+		}
+
+		&__slides {
+			&-text {
+				display: grid;
+				grid-row: 2/3;
+				grid-column: 1/2;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				color: $white-color;
+			}
+
+			&-img {
+				display: grid;
+				grid-row: 1/2;
+				grid-column: 2/3;
+			}
+			&-title {
+				font-size: 2rem;
+			}
+
+			&-p {
+				font-size: 1.5rem;
+			}
+		}
+
+		.slide {
+			display: none;
+			width: 100%;
+			height: auto; 
+		}
+
+		.slide img {
+			width: 100%;
+			// height: auto; 
+		}
+
+		&__slides .slide.active {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&__bottom {
+			display: flex;
+			justify-content: center;
+			position: relative;
+		}
+
+		&__dots {
+			margin-top: 10px;
+			display: inline-flex;
+			padding: 5px 10px;
+			padding-right: 0;
+			border-radius: 2px;
+		}
+
+		&__dots .dot {
+			width: 12px;
+			height: 12px;
+			background-color: #3a3a3a;
+			display: inline-block;
+			border-radius: 100%;
+			margin-right: 10px;
+		}
+
+		.arrow,
+		.dot {
+			cursor: pointer;
+		}
+
+		
 	}
 
 	.footer {
