@@ -48,12 +48,11 @@ function javaScript(done) {
 
 function convertImages(done) {
     const imageminOptions = {
-        verbose: true, // Dodaj niestandardową opcję verbose
-        // Dodaj inne niestandardowe opcje, jeśli są potrzebne
+        verbose: true, 
     };
 
     src(paths.img)
-        .pipe(imagemin([], imageminOptions)) // Przekazanie opcji jako drugi argument
+        .pipe(imagemin([], imageminOptions)) 
         .pipe(dest(paths.imgDest));
     done()
 }

@@ -204,9 +204,22 @@ textarea {
 	}
 }
 
+.offer{
+	
+		background-color: $text-color;
+		padding: 2em 2em;
+
+		.wrapper{
+			background-color: $white-color;
+			height: 50vh;
+		}
+
+		
+}
+
 //aboutme
 .aboutme {
-	background-color: $white-color;
+	background-color: $menu-background;
 	padding: 4em 2em;
 
 	&__boxes {
@@ -338,6 +351,15 @@ textarea {
 			}
 		}
 	}
+
+	&-description{
+		margin-top: 2em;
+		font-size: 1.2rem;
+	}
+
+	.github{
+		color: $decoration-text-color;
+	}
 }
 
 .footer {
@@ -454,10 +476,6 @@ textarea {
 		}
 
 		&__boxes-mobile {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: row;
 			position: relative;
 			margin-bottom: 2em;
 		}
@@ -741,6 +759,9 @@ textarea {
 			text-align: left;
 			font-size: 2rem;
 		}
+		&-description{
+			font-size: 1.5rem;
+		}
 
 		&-projects{
 			width: 50vw;
@@ -761,6 +782,8 @@ textarea {
 			width: auto;
 			max-height: 24rem;
 		}
+
+		
 	}
 
 	.footer {
