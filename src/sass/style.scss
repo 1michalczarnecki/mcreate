@@ -294,12 +294,13 @@ textarea {
 	background-color: $white-color;
 	padding: 4em 2em;
 
-	&__boxes-desktop {
+	&__desktop {
 		display: none;
 	}
 
-	&__arrow{
-		&-left,&-right{
+	&__arrow {
+		&-left,
+		&-right {
 			display: none;
 		}
 	}
@@ -483,10 +484,8 @@ textarea {
 		.slide {
 			display: none;
 			width: 100%;
-			height: auto; 
+			height: auto;
 		}
-
-		
 
 		.slide.active {
 			display: flex;
@@ -724,104 +723,44 @@ textarea {
 			display: none;
 		}
 
-		&__boxes-desktop {
+		&__desktop {
 			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-top: 8em;
 		}
 
-		&__slider {
-			margin-top: 2em;
-			padding: 2rem;
-			width: 100%;
-			height: auto;
+		&-text {
+			position: sticky;
+			top: 10rem;
+			width: 50vw;
+			margin-right: 4em;
+		}
+
+		&-title {
+			text-align: left;
+			font-size: 2rem;
+		}
+
+		&-projects{
+			width: 50vw;
+		}
+
+		&-boxes {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			margin-bottom: 4.8rem;
+			overflow: hidden;
 			background-color: $text-color;
 		}
 
-		&__container {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
-			height: 600px;
-			overflow: hidden;
+		&-photo {
+			margin: 2em 0;
+			width: auto;
+			max-height: 24rem;
 		}
-
-		&__slides-box {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(2, 1fr);
-		}
-
-		&__slides {
-			&-text {
-				display: grid;
-				grid-row: 2/3;
-				grid-column: 1/2;
-				justify-content: center;
-				align-items: center;
-				text-align: center;
-				color: $white-color;
-			}
-
-			&-img {
-				display: grid;
-				grid-row: 1/2;
-				grid-column: 2/3;
-			}
-			&-title {
-				font-size: 2rem;
-			}
-
-			&-p {
-				font-size: 1.5rem;
-			}
-		}
-
-		.slide {
-			display: none;
-			width: 100%;
-			height: auto; 
-		}
-
-		.slide img {
-			width: 100%;
-			// height: auto; 
-		}
-
-		&__slides .slide.active {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		&__bottom {
-			display: flex;
-			justify-content: center;
-			position: relative;
-		}
-
-		&__dots {
-			margin-top: 10px;
-			display: inline-flex;
-			padding: 5px 10px;
-			padding-right: 0;
-			border-radius: 2px;
-		}
-
-		&__dots .dot {
-			width: 12px;
-			height: 12px;
-			background-color: #3a3a3a;
-			display: inline-block;
-			border-radius: 100%;
-			margin-right: 10px;
-		}
-
-		.arrow,
-		.dot {
-			cursor: pointer;
-		}
-
-		
 	}
 
 	.footer {
