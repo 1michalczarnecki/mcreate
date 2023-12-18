@@ -3,8 +3,28 @@ const footerYear = document.querySelector('.footer-year')
 const navDesktop = document.querySelector('.nav__desktop')
 const arrowLeft = document.querySelector('.portfolio__arrow-left')
 const arrowRight = document.querySelector('.portfolio__arrow-right')
-
 let activeSlideNumber = 1
+const navItems = document.querySelectorAll('.nav__desktop-item')
+const section = document.querySelectorAll('.section')
+
+window.onscroll = () => {
+	section.forEach(sec => {
+		let top = window.scrollY 
+		let offset = sec.offsetTop - 86
+		let height = sec.offsetHeight
+		let id = sec.getAttribute('id')
+
+		if (top >= offset && top < offset + height) {
+			navItems.forEach(links => {
+				links.classList.remove('nav__desktop-item--active')
+				document.querySelector('.nav__desktop-items a[href*=' + id + ']').classList.add('nav__desktop-item--active')
+                
+			})
+		} 
+	})
+
+    
+}
 
 const hideActiveSlide = () => {
     const activeElement = document.querySelector('.active')
@@ -65,7 +85,7 @@ textElements.forEach(textElement => {
     writingAnimation();
 });
 
-//addShadowBg
+addShadowBg
 function addShadowBg(){
     if(window.scrollY >= 100){
         navDesktop.classList.add('shadow-bg')
@@ -73,6 +93,8 @@ function addShadowBg(){
         navDesktop.classList.remove('shadow-bg')
     }
 }
+
+
 
 //footerYear
 

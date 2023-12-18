@@ -70,6 +70,8 @@ textarea {
 	background-color: $menu-background;
 }
 
+
+
 .nav {
 	&__desktop {
 		display: none;
@@ -204,22 +206,9 @@ textarea {
 	}
 }
 
-.offer{
-	
-		background-color: $text-color;
-		padding: 2em 2em;
-
-		.wrapper{
-			background-color: $white-color;
-			height: 50vh;
-		}
-
-		
-}
-
 //aboutme
 .aboutme {
-	background-color: $menu-background;
+	background-color: $white-color;
 	padding: 4em 2em;
 
 	&__boxes {
@@ -262,6 +251,150 @@ textarea {
 	}
 }
 
+//offer
+
+.offer {
+	background-color: $menu-background;
+	padding: 4em 2em;
+
+	&-boxes {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		margin-top: 2em;
+	}
+
+	&__box {
+		// background-color: $white-color;
+		margin: 2em;
+		padding: 4em 2em;
+		border-radius: 8px;
+		color: $white-color;
+
+		&-title {
+			
+			font-size: 1.2rem;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		&-text{
+			margin: 1em 0;
+			text-align: center;
+		}
+
+		&-icon{
+			text-align: center;
+			font-size: 2rem;
+		}
+	}
+
+	.first {
+		background-color: $decoration-text-color;
+	}
+
+	.second {
+		background-color: #1da551;
+	}
+
+	.third {
+		background-color: #273da4;
+	}
+
+	.fourth {
+		background-color: $header-bg-color;
+	}
+}
+
+//portfolio
+.portfolio {
+	background-color: $white-color;
+	padding: 4em 2em;
+
+	&__desktop {
+		display: none;
+	}
+
+	&__arrow {
+		&-left,
+		&-right {
+			display: none;
+		}
+	}
+
+	.wrapper {
+		margin-top: 2em;
+	}
+
+	&__boxes-mobile {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		position: relative;
+		margin-bottom: 2em;
+	}
+
+	&__box {
+		margin-top: 1em;
+		width: 100%;
+		background-color: $text-color;
+
+		&-project {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.mobile-photo {
+				margin: 2em 0;
+				width: auto;
+				max-height: 20rem;
+			}
+		}
+	}
+
+	&-description {
+		margin-top: 2em;
+		font-size: 1.2rem;
+	}
+
+	.github {
+		color: $decoration-text-color;
+	}
+
+	&__arrow-right,
+	&__arrow-left {
+		display: flex;
+		position: absolute;
+		top: 50%;
+		right: 5%;
+		transform: translateY(-50%);
+
+		font-size: 2rem;
+		color: $white-color;
+		cursor: pointer;
+
+		z-index: 100;
+	}
+
+	&__arrow-left {
+		left: 5%;
+	}
+
+	.slide {
+		display: none;
+		width: 100%;
+		height: auto;
+	}
+
+	.slide.active {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
 //contact
 .contact {
 	background-color: $menu-background;
@@ -271,10 +404,10 @@ textarea {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin: 2em 0;
+		margin: 4em 0;
 
 		.fa-mailchimp {
-			font-size: 4rem;
+			font-size: 6rem;
 		}
 	}
 
@@ -302,68 +435,9 @@ textarea {
 	}
 }
 
-//portfolio
-.portfolio {
-	background-color: $white-color;
-	padding: 4em 2em;
-
-	&__desktop {
-		display: none;
-	}
-
-	&__arrow {
-		&-left,
-		&-right {
-			display: none;
-		}
-	}
-
-	.wrapper {
-		margin-top: 2em;
-	}
-
-	&-title {
-		margin-bottom: 1em;
-	}
-
-	&__boxes-mobile {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		margin-bottom: 2em;
-	}
-
-	&__box {
-		margin-top: 1em;
-		width: 100%;
-		background-color: $text-color;
-
-		&-project {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
-			.mobile-photo {
-				margin: 2em 0;
-				width: auto;
-				max-height: 20rem;
-			}
-		}
-	}
-
-	&-description{
-		margin-top: 2em;
-		font-size: 1.2rem;
-	}
-
-	.github{
-		color: $decoration-text-color;
-	}
-}
-
+//footer
 .footer {
-	padding: 0 0 8em;
+	padding: 2em 0 10em;
 	background-color: $menu-background;
 	font-size: 0.8rem;
 	text-align: center;
@@ -465,52 +539,7 @@ textarea {
 		}
 	}
 
-	.portfolio {
-		&-title {
-			text-align: center;
-			font-size: 1.4rem;
-		}
-		&__text {
-			text-align: center;
-			font-size: 1.4rem;
-		}
-
-		&__boxes-mobile {
-			position: relative;
-			margin-bottom: 2em;
-		}
-
-		&__arrow-right,
-		&__arrow-left {
-			display: flex;
-			position: absolute;
-			top: 50%;
-			right: 5%;
-			transform: translateY(-50%);
-
-			font-size: 2rem;
-			color: $white-color;
-			cursor: pointer;
-
-			z-index: 100;
-		}
-
-		&__arrow-left {
-			left: 5%;
-		}
-
-		.slide {
-			display: none;
-			width: 100%;
-			height: auto;
-		}
-
-		.slide.active {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-	}
+	
 }
 
 @media (min-width: 786px) {
@@ -541,6 +570,16 @@ textarea {
 		padding: 4rem;
 	}
 
+	.offer {
+		&-boxes {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+		}
+	}
+
+	
+
 	.contact {
 		.wrapper {
 			display: flex;
@@ -566,6 +605,10 @@ textarea {
 }
 
 @media (min-width: 992px) {
+
+	.section {
+		scroll-margin-top: 85.5px;
+	}
 	.nav {
 		&__mobile {
 			display: none;
@@ -583,32 +626,39 @@ textarea {
 				display: flex;
 				justify-content: center;
 				align-items: center;
-
-				.hover::after {
-					content: '';
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					height: 3px;
-					width: 100%;
-					background-color: $decoration-text-color;
-					transform: scaleX(0);
-					transform-origin: left;
-					transition: transform 0.8s;
-				}
-
-				.hover:hover::after {
-					transform: scaleX(1);
-					transform-origin: right;
-				}
 			}
 
 			&-item {
 				position: relative;
-				padding: 0.5em 2em;
+				margin: 0em 2em;
+				padding: 0.5em 0;
 				font-weight: bold;
 				font-size: 1.2rem;
 				color: $text-color;
+
+				&--active{
+					
+					color: $decoration-text-color;
+				}
+			}
+
+			
+			.hover::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 3px;
+				width: 100%;
+				background-color: $decoration-text-color;
+				transform: scaleX(0);
+				transform-origin: left;
+				transition: transform 0.8s;
+			}
+
+			.hover:hover::after {
+				transform: scaleX(1);
+				transform-origin: right;
 			}
 		}
 
@@ -635,6 +685,8 @@ textarea {
 					color: $text-color;
 					font-size: 1.8rem;
 					font-weight: bold;
+
+					
 				}
 			}
 		}
@@ -759,11 +811,11 @@ textarea {
 			text-align: left;
 			font-size: 2rem;
 		}
-		&-description{
+		&-description {
 			font-size: 1.5rem;
 		}
 
-		&-projects{
+		&-projects {
 			width: 50vw;
 		}
 
@@ -782,12 +834,10 @@ textarea {
 			width: auto;
 			max-height: 24rem;
 		}
-
-		
 	}
 
 	.footer {
-		padding: 2em;
+		padding: 4em;
 		background-color: $menu-background;
 		font-size: 1rem;
 		text-align: center;
