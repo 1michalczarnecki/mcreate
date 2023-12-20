@@ -11,7 +11,6 @@
 html {
 	font-size: 10px;
 	scroll-behavior: smooth;
-	// scroll-padding-top: 64px;
 }
 
 html,
@@ -55,7 +54,7 @@ textarea {
 
 .section-title {
 	text-align: center;
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	color: $text-color;
 }
 
@@ -69,8 +68,6 @@ textarea {
 .shadow-bg {
 	background-color: $menu-background;
 }
-
-
 
 .nav {
 	&__desktop {
@@ -92,8 +89,8 @@ textarea {
 		a {
 			padding: 1em 0;
 			font-size: 1rem;
-			color: $text-color;
-			transition: color 0.3s;
+			text-transform: uppercase;
+			
 		}
 
 		a:hover {
@@ -120,7 +117,7 @@ textarea {
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(5, 1fr);
-		// height: 100vh;
+		
 
 		.nav__desktop {
 			display: none;
@@ -172,7 +169,7 @@ textarea {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			font-size: 6rem;
+			font-size: 7rem;
 			color: $white-color;
 			animation: logoanimation 0.8s steps(2) infinite;
 		}
@@ -226,27 +223,28 @@ textarea {
 		padding: 2em 0;
 		margin: 1em;
 		color: $text-color;
-
-		border-radius: 0.3em;
 		transition: color 0.3s, background-color 0.3s, border 0.3s;
 
 		&-icon {
-			font-size: 1.6rem;
+			font-size: 1.5rem;
 			margin-bottom: 0.5em;
 		}
 
 		&-title {
-			font-weight: bold;
-			font-size: 1.2rem;
 			margin-bottom: 0.5em;
+			font-weight: bold;
+			font-size: 1.1rem;
+			text-transform: uppercase;
 		}
 
 		&-text {
-			font-size: 1.2rem;
+			font-size: 1.1rem;
 		}
 	}
 
-	&__box:hover {
+	&__box:hover,
+	&__box:focus {
+		outline: none;
 		color: $decoration-text-color;
 	}
 }
@@ -266,44 +264,69 @@ textarea {
 	}
 
 	&__box {
-		// background-color: $white-color;
 		margin: 2em;
 		padding: 4em 2em;
-		border-radius: 8px;
 		color: $white-color;
+		border-radius: 8px;
+		transition: background-color 0.3s;
 
 		&-title {
-			
 			font-size: 1.2rem;
 			font-weight: bold;
 			text-align: center;
+			text-transform: uppercase;
 		}
 
-		&-text{
+		&-text {
 			margin: 1em 0;
+			font-size: 1.1rem;
 			text-align: center;
 		}
 
-		&-icon{
+		&-icon {
 			text-align: center;
 			font-size: 2rem;
 		}
+	}
+
+	&__box:focus {
+		outline: none;
 	}
 
 	.first {
 		background-color: $decoration-text-color;
 	}
 
+	.first:hover,
+	.first:focus {
+		background-color: rgb(250, 86, 80);
+	}
+
 	.second {
 		background-color: #1da551;
+	}
+
+	.second:hover,
+	.second:focus {
+		background-color: #1eb457;
 	}
 
 	.third {
 		background-color: #273da4;
 	}
 
+	.third:hover,
+	.third:focus {
+		background-color: #2e48bc;
+	}
+
 	.fourth {
 		background-color: $header-bg-color;
+	}
+
+	.fourth:hover,
+	.fourth:focus {
+		background-color: rgb(255, 193, 35);
 	}
 }
 
@@ -315,14 +338,7 @@ textarea {
 	&__desktop {
 		display: none;
 	}
-
-	&__arrow {
-		&-left,
-		&-right {
-			display: none;
-		}
-	}
-
+	
 	.wrapper {
 		margin-top: 2em;
 	}
@@ -350,17 +366,23 @@ textarea {
 				margin: 2em 0;
 				width: auto;
 				max-height: 20rem;
+				border-radius: 22px;
 			}
 		}
 	}
 
 	&-description {
 		margin-top: 2em;
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 	}
 
 	.github {
 		color: $decoration-text-color;
+	}
+
+	a:focus {
+		outline: none;
+		color: $header-bg-color;
 	}
 
 	&__arrow-right,
@@ -370,7 +392,6 @@ textarea {
 		top: 50%;
 		right: 5%;
 		transform: translateY(-50%);
-
 		font-size: 2rem;
 		color: $white-color;
 		cursor: pointer;
@@ -416,6 +437,7 @@ textarea {
 		justify-content: center;
 		align-items: flex-start;
 		flex-direction: column;
+		font-size: 1.1rem;
 
 		&-text {
 			margin: 1em 0;
@@ -429,7 +451,9 @@ textarea {
 			margin-bottom: 1em;
 		}
 
-		a:hover {
+		a:hover,
+		a:focus {
+			outline: none;
 			color: $decoration-text-color;
 		}
 	}
@@ -439,7 +463,7 @@ textarea {
 .footer {
 	padding: 2em 0 10em;
 	background-color: $menu-background;
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 	text-align: center;
 }
 
@@ -464,6 +488,7 @@ textarea {
 			display: grid;
 			grid-column: 2/3;
 			grid-row: 1/2;
+			
 			&-box {
 				display: flex;
 				justify-content: center;
@@ -530,16 +555,40 @@ textarea {
 			}
 
 			&-title {
-				font-size: 1.4rem;
+				font-size: 1.3rem;
 			}
 
 			&-text {
-				font-size: 1.4rem;
+				font-size: 1.3rem;
 			}
 		}
 	}
 
-	
+	.offer {
+		&__box {
+			&-title {
+				font-size: 1.3rem;
+			}
+
+			&-text {
+				font-size: 1.2rem;
+			}
+
+			&-icon {
+				font-size: 2.4rem;
+			}
+		}
+	}
+
+	.contact {
+		&__date {
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			flex-direction: column;
+			font-size: 1.2rem;
+		}
+	}
 }
 
 @media (min-width: 786px) {
@@ -578,8 +627,6 @@ textarea {
 		}
 	}
 
-	
-
 	.contact {
 		.wrapper {
 			display: flex;
@@ -599,16 +646,19 @@ textarea {
 
 		&__date {
 			margin-top: 4em;
-			font-size: 1.1rem;
 		}
 	}
 }
 
 @media (min-width: 992px) {
-
 	.section {
 		scroll-margin-top: 85.5px;
 	}
+
+	.section-title {
+		font-size: 2rem;
+	}
+
 	.nav {
 		&__mobile {
 			display: none;
@@ -619,7 +669,6 @@ textarea {
 			display: flex;
 			justify-content: space-evenly;
 			width: 100%;
-			// background-color: $menu-background;
 			z-index: 100;
 
 			&-items {
@@ -630,19 +679,24 @@ textarea {
 
 			&-item {
 				position: relative;
-				margin: 0em 2em;
+				margin: 0em 1em;
 				padding: 0.5em 0;
 				font-weight: bold;
-				font-size: 1.2rem;
+				font-size: 1.4rem;
 				color: $text-color;
+				text-transform: uppercase;
+				transition: color 0.3s;
 
-				&--active{
-					
+				&--active {
 					color: $decoration-text-color;
 				}
 			}
 
-			
+			&-item:focus {
+				outline: none;
+				color: $decoration-text-color;
+			}
+
 			.hover::after {
 				content: '';
 				position: absolute;
@@ -685,8 +739,11 @@ textarea {
 					color: $text-color;
 					font-size: 1.8rem;
 					font-weight: bold;
+				}
 
-					
+				a:focus {
+					outline: none;
+					color: $decoration-text-color;
 				}
 			}
 		}
@@ -749,6 +806,18 @@ textarea {
 
 		&__box {
 			text-align: center;
+
+			&-icon {
+				font-size: 2rem;
+			}
+
+			&-title {
+				font-size: 1.4rem;
+			}
+
+			&-text {
+				font-size: 1.4rem;
+			}
 		}
 
 		&__box:nth-child(1) {
@@ -784,10 +853,25 @@ textarea {
 		}
 
 		&__date {
-			font-size: 1.2rem;
+			font-size: 1.3rem;
 		}
 	}
 
+	.offer {
+		&__box {
+			&-title {
+				font-size: 1.4rem;
+			}
+
+			&-text {
+				font-size: 1.3rem;
+			}
+
+			&-icon {
+				font-size: 2.5rem;
+			}
+		}
+	}
 	.portfolio {
 		&__boxes-mobile {
 			display: none;
@@ -809,10 +893,10 @@ textarea {
 
 		&-title {
 			text-align: left;
-			font-size: 2rem;
+			font-size: 1.4rem;
 		}
 		&-description {
-			font-size: 1.5rem;
+			font-size: 1.3rem;
 		}
 
 		&-projects {
@@ -833,6 +917,7 @@ textarea {
 			margin: 2em 0;
 			width: auto;
 			max-height: 24rem;
+			border-radius: 25px;
 		}
 	}
 
@@ -844,8 +929,8 @@ textarea {
 	}
 }
 
-@media (min-width: 1200px) {
-	.nav__desktop-item {
-		font-size: 1.4rem;
-	}
-}
+// @media (min-width: 1200px) {
+// 	.nav__desktop-item {
+// 		font-size: 1.4rem;
+// 	}
+// }
