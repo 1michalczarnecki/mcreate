@@ -90,7 +90,6 @@ textarea {
 			padding: 1em 0;
 			font-size: 1rem;
 			text-transform: uppercase;
-			
 		}
 
 		a:hover {
@@ -117,7 +116,6 @@ textarea {
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(5, 1fr);
-		
 
 		.nav__desktop {
 			display: none;
@@ -223,7 +221,11 @@ textarea {
 		padding: 2em 0;
 		margin: 1em;
 		color: $text-color;
-		transition: color 0.3s, background-color 0.3s, border 0.3s;
+		opacity: 0;
+		transform: translateY(20px);
+		transition: opacity 1s ease, transform 1s ease, color .3s;
+
+		
 
 		&-icon {
 			font-size: 1.5rem;
@@ -240,6 +242,11 @@ textarea {
 		&-text {
 			font-size: 1.1rem;
 		}
+	}
+
+	.box-show {
+		opacity: 1;
+		transform: translateY(0);
 	}
 
 	&__box:hover,
@@ -268,7 +275,10 @@ textarea {
 		padding: 4em 2em;
 		color: $white-color;
 		border-radius: 8px;
-		transition: background-color 0.3s;
+		opacity: 0;
+		transform: translateY(20px);
+		transition: opacity 1s ease, transform 1s ease, background-color 0.3s;
+		
 
 		&-title {
 			font-size: 1.2rem;
@@ -287,7 +297,16 @@ textarea {
 			text-align: center;
 			font-size: 2rem;
 		}
+
+		
 	}
+
+	.box-show {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	
 
 	&__box:focus {
 		outline: none;
@@ -330,6 +349,8 @@ textarea {
 	}
 }
 
+
+
 //portfolio
 .portfolio {
 	background-color: $white-color;
@@ -338,7 +359,7 @@ textarea {
 	&__desktop {
 		display: none;
 	}
-	
+
 	.wrapper {
 		margin-top: 2em;
 	}
@@ -488,7 +509,7 @@ textarea {
 			display: grid;
 			grid-column: 2/3;
 			grid-row: 1/2;
-			
+
 			&-box {
 				display: flex;
 				justify-content: center;
@@ -625,6 +646,8 @@ textarea {
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: repeat(2, 1fr);
 		}
+
+		
 	}
 
 	.contact {
